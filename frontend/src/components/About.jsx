@@ -5,7 +5,6 @@ import Navbar from "../pages/Navbar";
 const About = ({ username, handleLogout }) => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      {/* ✅ Navbar at the top */}
       <Navbar username={username} handleLogout={handleLogout} />
 
       <div className="max-w-4xl mx-auto text-center px-6 py-12">

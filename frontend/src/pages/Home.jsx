@@ -85,24 +85,7 @@ function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
      <Navbar username={loggedInUser} handleLogout={handleLogout} />
-      
-      {/* Users Grid */}
-      <main className="flex justify-center p-6">
-  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl relative">
-    {users.map((user, idx) => (
-      <UserCard
-        key={idx}
-        name={user.name}
-        email={user.email}
-        image={user.image}
-        expanded={expandedIndex === idx}
-        onClick={() =>
-          setExpandedIndex(expandedIndex === idx ? null : idx)
-        }
-      />
-    ))}
-  </div>
-</main>
+
       <section className="flex justify-center mt-10 px-4">
   <form
     onSubmit={handleAddUser}
@@ -149,6 +132,25 @@ function Home() {
     </button>
   </form>
 </section>
+      
+      {/* Users Grid */}
+      <main className="flex justify-center p-6">
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl relative">
+    {users.map((user, idx) => (
+      <UserCard
+        key={idx}
+        name={user.name}
+        email={user.email}
+        image={user.image}
+        expanded={expandedIndex === idx}
+        onClick={() =>
+          setExpandedIndex(expandedIndex === idx ? null : idx)
+        }
+      />
+    ))}
+  </div>
+</main>
+     
 
 
       <ToastContainer />

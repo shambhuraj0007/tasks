@@ -1,9 +1,11 @@
 import React from "react";
 import { Mail, Github, Linkedin, Globe, PhoneCallIcon } from "lucide-react";
+import Navbar from "../pages/Navbar";
 
-const Contact = () => {
+const Contact = ({ username, handleLogout }) => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 px-6">
+ <section className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+        <Navbar username={username} handleLogout={handleLogout} />
       <div className="max-w-4xl mx-auto text-center">
         {/* Title */}
         <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
