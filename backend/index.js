@@ -16,7 +16,7 @@ app.get('/ping', (req, res) => {
 app.use(bodyParser.json());
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://<your-frontend-domain>", 
+  "https://tasks-xi-rosy.vercel.app", 
 ];
 
 app.use(
