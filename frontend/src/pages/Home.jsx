@@ -164,20 +164,21 @@ const handleDeleteUser = async (email) => {
 
       {/* Users Grid */}
       <main className="flex justify-center p-6">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl relative">
-          {users.map((user, idx) => (
-            <UserCard
-              key={idx}
-              name={user.name}
-              email={user.email}
-              image={user.image}
-              expanded={expandedIndex === idx}
-              onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
-              onDelete={() => handleDeleteUser(user.email)} // 👈 Delete
-            />
-          ))}
-        </div>
-      </main>
+  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl">
+    {users.map((user, idx) => (
+      <UserCard
+        key={idx}
+        name={user.name}
+        email={user.email}
+        image={user.image}
+        expanded={expandedIndex === idx}
+        onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
+        onDelete={() => handleDeleteUser(user.email)}
+      />
+    ))}
+  </div>
+</main>
+
 
       <ToastContainer />
 
