@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
+const contactRouter = require('./Routes/contactRoutes');
 
 require('dotenv').config();
 require('./Models/db');
@@ -49,7 +50,11 @@ app.options('*', cors({
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
+// 👉 Contact routes (directly here)          // 👈 Fetch all contacts
+app.use("/api", contactRouter);
+
+
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
